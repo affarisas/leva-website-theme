@@ -1,0 +1,27 @@
+// ui
+@mixin display-flex($orientation, $align-items: "center", $is-wrap: false) {
+  display: flex;
+  flex-direction: $orientation;
+  justify-content: $align-items;
+  @if $is-wrap { flex-wrap: wrap; }
+}
+
+// shadow
+@mixin card-shadow {
+  filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.05));
+}
+@mixin button-shadow {
+  box-shadow: 0px 0px 41.6px 0px rgba(11, 132, 255, 0.4);
+}
+@mixin light-shadow-main-color {
+  filter: drop-shadow(0px 0px 19.85526px #67D8FFAA);
+}
+
+@mixin limit-text-overflow($line-limit) {
+  // see: https://css-tricks.com/almanac/properties/l/line-clamp/
+  // limit lines of <p> element:
+  display: -webkit-box;
+  -webkit-line-clamp: $line-limit;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}

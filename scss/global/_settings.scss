@@ -1,0 +1,78 @@
+/**
+ * General configuration
+ */
+
+ *, html, body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scrollbar-width: 0;
+}
+
+html {
+  margin-top: 0 !important;
+}
+
+body {
+  background: radial-gradient(
+    circle at 0% 0%,
+    #f3f3f3 0%,
+    #FFFFFF 100%
+  );
+}
+
+hr {
+  border-style: none;
+}
+
+/**
+ * Cross-browser scrollbar configuration
+ */
+/*IE*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  body {
+      margin-right: -10px;
+      padding-top: 32px;
+      margin-top: -32px;
+      margin-bottom: -32px;
+      padding-bottom: 32px;
+    
+      /* ie scrollbar color properties */
+      scrollbar-base-color: #efefef;
+      scrollbar-face-color: #cecece;
+      scrollbar-3dlight-color: #cecece;
+      scrollbar-highlight-color: #cecece;
+      scrollbar-track-color: #efefef;
+      scrollbar-arrow-color: #cecece;
+      scrollbar-shadow-color: #cecece;
+      scrollbar-dark-shadow-color: #cecece;
+    }
+  }
+  
+  /*Firefox*/
+  /*From version 64 - https://drafts.csswg.org/css-scrollbars-1/*/
+  body {
+    scrollbar-width: thin;
+    scrollbar-color: #cecece #efefef;
+  }
+  
+  /*Chrome*/
+  body::-webkit-scrollbar-track {
+    background-color: #efefef;
+    width: 4px;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #cecece;
+    border: 1px solid transparent;
+    background-clip: content-box;
+  }
+  
+  body::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* GLOBAL NO SCROLLBAR */
+  .no-scrollbar::-webkit-scrollbar {
+    height: 0;
+  }

@@ -1,0 +1,95 @@
+@import 'scss/global/mixins';
+
+
+.part-general-features-section {
+    padding: 80px 0 40px 0;
+    background-color: #F9FAFB; // Light background as per image impression
+
+    div.lock__ui {
+        flex-direction: column;
+    }
+
+    .header-container {
+        text-align: center;
+        margin-bottom: 50px;
+
+        h2 {
+            font-size: 28px;
+            letter-spacing: -1.5px;
+            font-weight: 600;
+            color: var(--neutral-black);
+        }
+    }
+
+    .features-grid {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+
+        .feature-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            width: 280px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            }
+
+            .icon-wrapper {
+                width: 48px;
+                height: 48px;
+                background-color: rgba(11, 132, 255, 0.1); // Light blue bg
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 20px;
+
+                svg {
+                    width: 24px;
+                    height: 24px;
+                    color: var(--main-color); // Blue icon color
+                }
+            }
+
+            h3 {
+                font-size: 18px;
+                font-weight: 700;
+                color: var(--rich-black);
+                letter-spacing: -1px;
+                margin-bottom: 10px;
+                line-height: 1.3;
+            }
+
+            p {
+                font-size: 14px;
+                color: #7D888A; // Grey description
+                line-height: 1.5;
+                margin: 0;
+            }
+        }
+    }
+}
+
+// Mobile responsiveness
+@media (max-width: 768px) {
+    .part-general-features-section {
+        .features-grid {
+            flex-direction: column;
+            align-items: center;
+            
+            .feature-card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    }
+}

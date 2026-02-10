@@ -1,0 +1,10 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g style="mix-blend-mode:multiply">
+<path d="M7.09174 9.21875H0.869385V48.8739H40.2776V42.6126" stroke="#C7C7D9" stroke-width="1.73865" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7.09204 0.871094H48.5744V42.6134H7.09204V0.871094Z" stroke="#C7C7D9" stroke-width="1.73865" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M43.3877 34.2633L37.1653 17.5664L28.8688 30.0891L23.6835 23.8277L17.4612 34.2633" stroke="#C7C7D9" stroke-width="1.73865" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M20.5724 15.4801C22.2906 15.4801 23.6835 14.0784 23.6835 12.3494C23.6835 10.6204 22.2906 9.21875 20.5724 9.21875C18.8541 9.21875 17.4612 10.6204 17.4612 12.3494C17.4612 14.0784 18.8541 15.4801 20.5724 15.4801Z" stroke="#C7C7D9" stroke-width="1.73865" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M48.5744 34.0312H7.09204H48.5744Z" fill="white"/>
+<path d="M48.5744 34.0312H7.09204" stroke="#C7C7D9" stroke-width="1.73865" stroke-linejoin="round"/>
+</g>
+</svg>

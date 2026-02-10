@@ -1,0 +1,150 @@
+.part-homepage-testimonials {
+  padding: 100px 0;
+  overflow: hidden;
+  background-color: #fff;
+  position: relative; }
+  .part-homepage-testimonials .lock__ui {
+    flex-direction: column; }
+  .part-homepage-testimonials .header-container {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 0 20px; }
+    .part-homepage-testimonials .header-container h2 {
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--neutral-black);
+      margin-bottom: 15px; }
+    .part-homepage-testimonials .header-container .description {
+      font-size: 16px;
+      color: #7D888A;
+      max-width: 600px;
+      margin: 0 auto; }
+  .part-homepage-testimonials .marquee-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%; }
+    .part-homepage-testimonials .marquee-container .marquee-row {
+      position: relative;
+      display: flex;
+      width: 100%;
+      overflow: hidden;
+      gap: 30px;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #fff 5%, #fff 95%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #fff 5%, #fff 95%, transparent); }
+      .part-homepage-testimonials .marquee-container .marquee-row.scroll-left .marquee-content:nth-child(1) {
+        animation: scrollLeft var(--time) linear infinite;
+        animation-delay: calc(var(--time) * -1);
+        padding-left: 30px; }
+      .part-homepage-testimonials .marquee-container .marquee-row.scroll-left .marquee-content:nth-child(2) {
+        animation: scrollLeft2 var(--time) linear infinite;
+        animation-delay: calc(var(--time) / -2);
+        padding-right: 30px; }
+      .part-homepage-testimonials .marquee-container .marquee-row.scroll-right .marquee-content:nth-child(1) {
+        animation: scrollRight var(--time) linear infinite;
+        animation-delay: calc(var(--time) * -1);
+        padding-left: 30px; }
+      .part-homepage-testimonials .marquee-container .marquee-row.scroll-right .marquee-content:nth-child(2) {
+        animation: scrollRight2 var(--time) linear infinite;
+        animation-delay: calc(var(--time) / -2);
+        padding-right: 30px; }
+      .part-homepage-testimonials .marquee-container .marquee-row:hover .marquee-content {
+        animation-play-state: paused; }
+      .part-homepage-testimonials .marquee-container .marquee-row .marquee-content {
+        display: flex;
+        gap: 30px;
+        flex-shrink: 0;
+        white-space: nowrap; }
+      .part-homepage-testimonials .marquee-container .marquee-row .testimonial-card {
+        width: 450px;
+        flex-shrink: 0;
+        padding: 30px;
+        background: #FCFCFF;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .part-homepage-testimonials .marquee-container .marquee-row .testimonial-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08); }
+        .part-homepage-testimonials .marquee-container .marquee-row .testimonial-card .quote-icon {
+          font-size: 40px;
+          color: var(--main-color);
+          line-height: 1;
+          margin-bottom: 10px;
+          font-family: Georgia, serif; }
+        .part-homepage-testimonials .marquee-container .marquee-row .testimonial-card .text {
+          font-size: 14px;
+          color: var(--rich-black);
+          line-height: 1.6;
+          margin-bottom: 20px;
+          flex-grow: 1;
+          white-space: normal; }
+        .part-homepage-testimonials .marquee-container .marquee-row .testimonial-card .author {
+          display: flex;
+          align-items: center;
+          gap: 12px; }
+          .part-homepage-testimonials .marquee-container .marquee-row .testimonial-card .author .avatar,
+          .part-homepage-testimonials .marquee-container .marquee-row .testimonial-card .author .avatar-placeholder {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #e8e8e8;
+            flex-shrink: 0; }
+          .part-homepage-testimonials .marquee-container .marquee-row .testimonial-card .author .avatar-placeholder {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+          .part-homepage-testimonials .marquee-container .marquee-row .testimonial-card .author .name {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--rich-black);
+            white-space: normal; }
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(100%); }
+  100% {
+    transform: translateX(-100%); } }
+
+@keyframes scrollLeft2 {
+  0% {
+    transform: translateX(0); }
+  100% {
+    transform: translateX(-200%); } }
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-100%); }
+  100% {
+    transform: translateX(100%); } }
+
+@keyframes scrollRight2 {
+  0% {
+    transform: translateX(-200%); }
+  100% {
+    transform: translateX(0); } }
+
+@media (max-width: 768px) {
+  .part-homepage-testimonials {
+    padding: 60px 0; }
+    .part-homepage-testimonials .header-container {
+      margin-bottom: 40px; }
+      .part-homepage-testimonials .header-container h2 {
+        font-size: 28px; }
+      .part-homepage-testimonials .header-container .description {
+        font-size: 14px; }
+    .part-homepage-testimonials .marquee-container {
+      gap: 20px; }
+      .part-homepage-testimonials .marquee-container .marquee-row {
+        gap: 20px; }
+        .part-homepage-testimonials .marquee-container .marquee-row .marquee-content {
+          gap: 20px; }
+        .part-homepage-testimonials .marquee-container .marquee-row .testimonial-card {
+          width: 280px;
+          padding: 20px; }
+          .part-homepage-testimonials .marquee-container .marquee-row .testimonial-card .quote-icon {
+            font-size: 30px; }
+          .part-homepage-testimonials .marquee-container .marquee-row .testimonial-card .text {
+            font-size: 13px; } }

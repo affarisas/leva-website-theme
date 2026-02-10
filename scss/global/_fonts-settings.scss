@@ -1,0 +1,90 @@
+@import 'sass_variables';
+
+* {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+// global settings for google material symbols
+.material-symbols-outlined {
+  font-size: 21px;
+}
+
+h1, h2, h3, h4, h5, h6, p, span {
+  // user-select: none;
+}
+p {
+  font-size: 15px;
+  line-height: 160%;
+  height: max-content;
+  color: var(--neutral-300);
+  letter-spacing: -0.5px;
+}
+h1 {
+  font-size: 48px;
+  letter-spacing: -1.5px;
+  @media screen and (max-width: $desktop-extra-small) {
+    font-size: 37px;
+  }
+  @media screen and (max-width: $tablet) {
+    font-size: 32px;
+  }
+  @media screen and (max-width: $mobile-large) {
+    font-size: 28px;
+  }
+}
+h2 {
+  font-size: 29.3px;
+  letter-spacing: -0.5px;
+  @media screen and (max-width: $tablet) {
+    font-size: 22px;
+  }
+}
+h3 {
+  font-size: 24px;
+  letter-spacing: -1px;
+}
+h4 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+}
+h5 {
+  font-size: 18px;
+  letter-spacing: -0.5px;
+}
+h6 {
+  font-size: 16px;
+  letter-spacing: -0.5px;
+}
+button {
+
+}
+a {
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: -0.8px;
+  &.main-gradient {
+    background: var(--main-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+}
+span {
+  &.bold {
+    font-weight: 700;
+    letter-spacing: -0.8px;
+  }
+  &.black {
+    color: var(--neutral-black);
+  }
+  &.main-gradient {
+    background: var(--main-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}

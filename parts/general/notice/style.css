@@ -1,0 +1,7 @@
+.general-notice {
+  padding: 16px 24px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: rgba(11, 132, 255, 0.1); }

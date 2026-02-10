@@ -1,0 +1,111 @@
+@import '../global/mixins';
+
+$options: ();
+
+@mixin button($options) {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  font-size: 15px;
+  transition: .25s;
+  color: map-get($options, 'font-color');
+  border-radius: 8px;
+  @media screen and (max-width: $mobile-large) {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+  @if map-get($options, 'type') == 'outline' {
+    // @include button-shadow();
+    border: 1px solid map-get($options, 'bg-color');
+    background-color: transparent;
+  } @else if map-get($options, 'type') == 'fill' {
+    // @include button-shadow();
+    border: none;
+    background-color: map-get($options, 'bg-color');
+  } @else if map-get($options, 'type') == 'disabled' {
+    border: none;
+    background-color: var(--soft-gray);
+    color: #9C9C9C;
+  }
+
+  &:hover {
+    cursor: pointer;
+    transition: .25s;
+    transform: scale(1.1);
+  }
+}
+
+a, button {
+  transition: .25s;
+  &:hover {
+    transform: scale(1.05);
+    transition: .25;
+  }
+}
+
+a.disabled, button.disabled {
+  $options: (
+    'type': 'disabled',
+    'bg-color': none,
+    'font-color': none
+  );
+  @include button($options);
+}
+a.fill.primary, button.fill.primary {
+  $options: (
+    'type': 'fill',
+    'bg-color': var(--main-color),
+    'font-color': #fff
+  );
+  @include button($options);
+}
+a.fill.accent, button.fill.accent {
+  $options: (
+    'type': 'fill',
+    'bg-color': var(--accent-color),
+    'font-color': #fff
+  );
+  @include button($options);
+}
+a.fill.white, button.fill.white {
+  $options: (
+    'type': 'fill',
+    'bg-color': #fff,
+    'font-color': var(--neutral-black)
+  );
+  @include button($options);
+}
+a.outline.white, button.outline.white {
+  $options: (
+    'type': 'outline',
+    'bg-color': transparent,
+    'font-color': #fff
+  );
+  @include button($options);
+}
+button.outline.primary {
+  $options: (
+    'type': 'outline',
+    'bg-color': var(--main-color),
+    'font-color': var(--main-color)
+  );
+  @include button($options);
+}
+
+a.shadow-light, button.shadow-light {
+  &.main-color {
+    @include light-shadow-main-color();
+  }
+}
+
+a.underline {
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+  text-transform: uppercase;
+  font-size: 15px;
+  &.main-color {
+    color: var(--main-color-130);
+  }
+}

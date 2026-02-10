@@ -1,0 +1,60 @@
+.table-component {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 8px;
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; // Ensure table doesn't squish too much on mobile
+
+    thead {
+      background-color: #F2F2F7;
+      
+      tr {
+        th {
+          color: var(--neutral-400);
+          font-weight: 500;
+          text-align: left;
+          padding: 16px 24px;
+          font-size: 14px;
+          
+          &:first-child {
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px; // If header needs rounded corners separately or if table has them
+          }
+          
+          &:last-child {
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid var(--neutral-900);
+        
+        &:last-child {
+          border-bottom: none;
+        }
+
+        td {
+          padding: 20px 24px;
+          color: var(--neutral-300); // Assuming default text color
+          font-size: 15px;
+          letter-spacing: -0.5px;
+          font-weight: 600; // Looks bold in image for first column and values
+
+          &:first-child {
+             font-weight: 700; // First column seems bolder
+          }
+          
+          // Specific styling for smaller text or lighter weights if needed based on image interpretation
+          // The image shows mostly bold/dark text for content.
+        }
+      }
+    }
+  }
+}

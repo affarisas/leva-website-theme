@@ -1,0 +1,44 @@
+@import '../global/mixins';
+
+.benchmark-toast-label {
+  button.toast-2d-button {
+    margin-left: 10px;
+    margin-top: 4px;
+    border-style: none;
+    background-color: white;
+    color: black;
+    border-radius: 3px;
+    padding: 5px 12px;
+    cursor: pointer;
+  }
+  svg {
+    @media screen and (max-width: $mobile-large) {
+      width: 30px !important;
+      height: 30px !important;
+    }
+  }
+  p {
+    @media screen and (max-width: $mobile-large) {
+      font-size: 13px;
+    }
+  }
+}
+
+div.movier-toast {
+  position: fixed;
+  bottom: 25px;
+  background-color: var(--rich-black);
+  color: white;
+  padding: 14px 23px;
+  display: none;
+  transition: .3s;
+  z-index: 9;
+  width: calc(100% - 50px);
+  max-width: max-content;
+  &.left {
+    left: 25px;
+  }
+  &.right {
+    right: 25px;
+  }
+}

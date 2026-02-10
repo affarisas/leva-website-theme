@@ -1,0 +1,146 @@
+.part-general-contacto {
+  display: flex;
+  flex-direction: column !important;
+  justify-content: center !important;
+  min-height: 100vh;
+  padding: 80px 0;
+  background-color: #FAFAFA;
+  background-image: radial-gradient(#E0E0E0 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+.part-general-contacto .content-wrapper {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+.part-general-contacto .header-container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.part-general-contacto .header-container h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--rich-black);
+  margin-bottom: 15px;
+}
+.part-general-contacto .header-container .description {
+  font-size: 16px;
+  color: #7D888A;
+}
+.part-general-contacto .container {
+  width: 100%;
+  background: linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0.6) 60%, rgba(255, 255, 255, 0.0666666667) 100%);
+  padding: 40px;
+  border-radius: 16px;
+  backdrop-filter: blur(3px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+.part-general-contacto .contact-card .form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.part-general-contacto .contact-card .form-row.full-width {
+  display: block;
+}
+.part-general-contacto .contact-card .form-row .form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.part-general-contacto .contact-card .form-row .form-group.checkbox-group {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.part-general-contacto .contact-card .form-row .form-group.checkbox-group input[type=radio] {
+  width: auto;
+  margin: 0;
+  accent-color: var(--main-color);
+}
+.part-general-contacto .contact-card .form-row .form-group.checkbox-group label {
+  margin: 0;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--neutral-black);
+}
+.part-general-contacto .contact-card .form-row .form-group label {
+  font-size: 14px;
+  color: #7D888A;
+  margin-bottom: 8px;
+}
+.part-general-contacto .contact-card .form-row .form-group .input-wrapper {
+  position: relative;
+}
+.part-general-contacto .contact-card .form-row .form-group .input-wrapper input, .part-general-contacto .contact-card .form-row .form-group .input-wrapper select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--rich-black);
+  outline: none;
+  transition: border-color 0.2s;
+  accent-color: var(--main-color);
+}
+.part-general-contacto .contact-card .form-row .form-group .input-wrapper input:focus, .part-general-contacto .contact-card .form-row .form-group .input-wrapper select:focus {
+  border-color: var(--main-color);
+}
+.part-general-contacto .contact-card .form-row .form-group .input-wrapper input::placeholder, .part-general-contacto .contact-card .form-row .form-group .input-wrapper select::placeholder {
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--neutral-400);
+}
+.part-general-contacto .contact-card button.full-width {
+  width: 100%;
+  margin-top: 10px;
+}
+.part-general-contacto .contact-card .form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+.part-general-contacto .contact-card .success-message {
+  text-align: center;
+  padding: 20px 0;
+}
+.part-general-contacto .contact-card .success-message .icon {
+  width: 60px;
+  height: 60px;
+  background: var(--main-color);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin: 0 auto 20px;
+}
+.part-general-contacto .contact-card .success-message h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--rich-black);
+  margin-bottom: 10px;
+}
+.part-general-contacto .contact-card .success-message p {
+  color: #7D888A;
+  margin-bottom: 30px;
+}
+@media (max-width: 768px) {
+  .part-general-contacto {
+    padding: 40px 20px;
+  }
+  .part-general-contacto .header-container h2 {
+    font-size: 28px;
+  }
+  .part-general-contacto .contact-card {
+    padding: 30px 20px;
+  }
+  .part-general-contacto .contact-card .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}

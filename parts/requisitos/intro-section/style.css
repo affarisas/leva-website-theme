@@ -1,0 +1,16 @@
+.part-requisitos-intro-section {
+  padding: 80px 0 20px 0;
+  background: radial-gradient(circle at 70% 70%, #F9F9F9 0%, #FFFFFF 100%); }
+  .part-requisitos-intro-section .lock__ui {
+    padding: 80px 0;
+    flex-direction: column; }
+  .part-requisitos-intro-section .header-container {
+    text-align: center; }
+    .part-requisitos-intro-section .header-container h2 {
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--rich-black);
+      margin-bottom: 15px; }
+    .part-requisitos-intro-section .header-container .description {
+      font-size: 16px;
+      color: #7D888A; }

@@ -1,0 +1,37 @@
+@import "mixins";
+@import "sass_variables";
+
+section.leva-component, footer {
+  @include display-flex(row, space-between);
+  width: 100%;
+  &:first-of-type {
+    padding-top: 100px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  &:not(:first-of-type) {
+    @media screen and (max-width: $tablet) {
+      padding: 40px 25px;
+    }
+  }
+  div.backgrounds_container {
+    z-index: 0;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .lock__ui {
+    margin: 0 auto;
+    width: 100%;
+    max-width: $desktop-medium;
+    z-index: 1;
+    @media screen and (max-width: $desktop-medium) {
+      max-width: $desktop-small;
+    }
+    @media screen and (max-width: $desktop-small) {
+      max-width: $desktop-extra-small;
+    }
+    @media screen and (max-width: $desktop-extra-small) {
+      max-width: 650px;
+    }
+  }
+}

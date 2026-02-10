@@ -1,0 +1,308 @@
+@import '../global/sass_variables';
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+// ------------ viewports -------------
+$desktop-large: 1920px;
+$desktop-medium: 1366px; // 1366 x 695 -> actual medium laptop size
+$desktop-small: 1200px;
+$desktop-extra-small: 1024px;
+$tablet: 768px;
+$mobile-large: 425px;
+$mobile-medium: 375px;
+$mobile-small: 320px;
+$mobile-extra-small: 280px;
+
+/**
+ * @description sobreescribe el estilo de la navegación cuando entra a modo mobile
+ */
+@mixin mobile-nav() {
+  // Animation properties
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  padding: 0 35px;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.99);
+  border-radius: 15px;
+  -webkit-backdrop-filter: blur(12px) !important;
+  backdrop-filter: blur(12px) !important;
+  
+  .main-navigation {
+    width: 100%;
+    max-width: var(--default-lock__ui-size);
+    margin: 0 auto;
+    ul {
+      flex-direction: column;
+      width: 100%;
+      margin-right: 0;
+      li {
+        border-top: 1px solid var(--light);
+        padding: 15px 0;
+        margin-left: 0 !important;
+        justify-content: flex-start !important;
+        &:first-child {
+          margin-top: 20px;
+          position: relative;
+          border-top: none;
+        }
+        &:last-child {
+          padding-bottom: 25px;
+          margin-bottom: 10px;
+          border-bottom: 1px solid var(--neutral-900);
+        }
+        &.active {
+          color: var(--main-color);
+          &::before {
+            content: "";
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 70px;
+  z-index: 12;
+  position: fixed;
+  font-size: 14px;
+  transition: .1s;
+  top: 20px;
+  @media screen and (max-width: $desktop-small) {
+    height: 68px;
+  }
+  .lock__ui {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    max-width: $desktop-medium;
+    padding: 0 20px;
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 15px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    @media screen and (max-width: $desktop-medium) {
+      max-width: $desktop-small;
+    }
+    @media screen and (max-width: $desktop-small) {
+      max-width: $desktop-extra-small;
+      margin: 0 25px;
+    }
+    @media screen and (max-width: $desktop-extra-small) {
+      max-width: 650px;
+    }
+    /**
+     * Logo
+     */
+    a.logo {
+      img {
+        width: 100px;
+        height: auto;
+        margin-right: auto;
+        @media screen and (max-width: $mobile-large) {
+          width: 55px;
+        }
+      }
+    }
+    /**
+     * Navigation
+     */
+    .nav-supercontainer {
+      display: flex;
+      list-style: none;
+      height: 100%;
+      @media screen and (max-width: $desktop-extra-small) {
+        @include mobile-nav();
+      }
+      .main-navigation {
+        height: 100%;
+        @include display-flex(column, center);
+        // a {
+        //   position: relative;
+        //   display: inline-block;
+        //   text-decoration: none;
+        //   color: #333;
+        //   padding-bottom: 5px;
+        //   &::before {
+        //     content: "";
+        //     position: absolute;
+        //     top: calc(100% - 2px);
+        //     left: 50%;
+        //     transform: translateX(-50%);
+        //     width: 0;
+        //     height: 2px;
+        //     background-color: #333;
+        //     transition: width 0.3s ease-in-out;
+        //   }
+        // }
+        ul {
+          display: flex;
+          margin-left: auto;
+          margin-right: 0px;
+          list-style: none;
+          list-style-type: none;
+          height: 100%;
+          li {
+            height: 100%;
+            margin-left: 30px;
+            font-weight: 500;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:first-child {
+              margin-left: 0;
+            }
+            &:not(.active) {
+              a {
+                text-decoration: none;
+                color: var(--neutral-200);
+                margin-top: -4px;
+              }
+            }
+            &.active {
+              position: relative;
+              height: 100%;
+              &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: var(--main-color);
+              }
+              pointer-events: none;
+              user-select: none;
+              a {
+                text-decoration: none;
+                color: var(--main-color);
+                font-weight: 600;
+                margin-top: -4px;
+              }
+            }
+          }
+        }
+      }
+    }
+    button {
+      height: fit-content;
+      align-self: center;
+      @media screen and (max-width: $desktop-extra-small) {
+        max-width: max-content;
+        margin: 10px auto 25px auto;
+      }
+    }
+    button.only-mobile {
+      display: none;
+      @media screen and (max-width: $desktop-extra-small) {
+        display: block;
+      }
+    }
+    button.only-desktop {
+      display: none;
+      @media screen and (min-width: #{$desktop-extra-small + 1px}) {
+        display: block;
+      }
+    }
+    /**
+     * Burger pointer (nav)
+     */
+     input[type=checkbox].menu-btn {
+      display: none;
+      //add checked event to input[type=checkbox]
+      &:checked {
+        //select all the nav-supercontainer next to input[type=checkbox].menu-btn (:checked only works with '~' and '+')
+        ~ div.nav-supercontainer {
+          // display: flex; // Removed as it is already flex in mobile-nav
+          visibility: visible;
+          opacity: 1;
+          transform: translateY(0);
+          pointer-events: auto;
+        }
+      }
+    }
+    /**
+    * BURGER-STYLED MENU
+    */
+    label.menu-icon {
+      // espacio sobrante entre el viewport - lock__ui (se divide en 2 para obtener el márgen por cada lado)
+      $lock__ui-half-margin: calc((100vw - var(--default-lock__ui-size) ) / 2);
+
+      display: none;
+      position: absolute;
+      
+      // Increased click area for better UX
+      width: 48px;
+      height: 48px;
+      cursor: pointer;
+      background-color: transparent;
+      z-index: 20;
+      
+      right: $lock__ui-half-margin;
+      top: 50%;
+      transform: translateY(-50%);
+      
+      // Center the icon lines within the large click area
+      align-items: center;
+      justify-content: center;
+
+      @media screen and (max-width: $desktop-extra-small) {
+        display: flex;
+        right: 15px; // Adjusted for the larger click area
+      }
+
+      .navicon {
+        position: relative;
+        width: 25px;
+        height: 2px;
+        background-color: var(--main-color);
+        display: block;
+        transition: background-color 0.2s ease;
+
+        &::before, &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: var(--main-color);
+          left: 0;
+          transition: top 0.2s ease, transform 0.2s ease;
+        }
+
+        &::before {
+          top: -8px;
+          @media screen and (max-width: 425px) {
+            top: -6px;
+          }
+        }
+
+        &::after {
+          top: 8px;
+          @media screen and (max-width: 425px) {
+            top: 6px;
+          }
+        }
+      }
+    }
+  }
+}

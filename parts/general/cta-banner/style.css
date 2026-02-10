@@ -1,0 +1,84 @@
+.part-general-cta-banner {
+  padding: 60px 0;
+}
+.part-general-cta-banner .banner-content {
+  position: relative;
+  background: #133587;
+  border-radius: 20px;
+  padding: 60px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+  width: 100%;
+  box-shadow: 0px 4px 250px 0px rgba(19, 53, 135, 0.2);
+}
+.part-general-cta-banner .banner-content .content-wrapper {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.part-general-cta-banner .banner-content .content-wrapper h3 {
+  font-size: 29px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  color: #fff;
+}
+@media screen and (max-width: 768px) {
+  .part-general-cta-banner .banner-content .content-wrapper h3 {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .part-general-cta-banner .banner-content .content-wrapper h3 {
+    font-size: 22px;
+  }
+}
+.part-general-cta-banner .banner-content .content-wrapper .actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+@media screen and (max-width: 425px) {
+  .part-general-cta-banner .banner-content .content-wrapper .actions {
+    flex-direction: column;
+  }
+}
+.part-general-cta-banner .banner-content .content-wrapper .actions .fill.white {
+  cursor: pointer;
+  background-color: #fff;
+  color: var(--neutral-black);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+}
+.part-general-cta-banner .banner-content .content-wrapper .actions .outline.white {
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+}
+.part-general-cta-banner .banner-content .decorative-circle {
+  position: absolute;
+  width: auto;
+  height: auto;
+  z-index: 0;
+}
+.part-general-cta-banner .banner-content .decorative-circle.left {
+  left: -60px;
+  top: -60px;
+}
+.part-general-cta-banner .banner-content .decorative-circle.right {
+  right: -60px;
+  bottom: -60px;
+}

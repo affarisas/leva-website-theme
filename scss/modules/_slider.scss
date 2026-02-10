@@ -1,0 +1,262 @@
+div.content_scroller_container {
+  position: relative;
+  // controller animations
+  @keyframes fadein-arrow {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fadeout-arrow {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+    }
+  }
+  @keyframes expand-width-bar {
+    0% {
+      width: 0px;
+    }
+    100% {
+      width: 20px;
+    }
+  }
+  @keyframes collapse-width-bar {
+    0% {
+      width: 20px;
+    }
+    100% {
+      width: 0px;
+    }
+  }
+  div.arrow_left_scroller {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 100%;
+    background-color: white;
+    z-index: 1;
+    transition: .25s;
+    &:hover {
+      cursor: pointer;
+    }
+    &:hover::after {
+      transition: .25s;
+      transform: scale(1.2);
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: calc(50% - 7.5px);
+      left: 0;
+      background-image: url(https://cproc.co/wp-content/themes/CPROC_Template/resources/img/arrow_left_black.webp);
+      background-size: 15.27px; // 22px w / 36px h = 0.61 * 25px h = 15.27px -> new width
+      background-repeat: no-repeat;
+      background-position: center center;
+      width: 15.27px;
+      height: 25px;
+      transition: .25s;
+    }
+    // animation execution by javascript (see scroller.js)
+    &.show {
+      display: block !important;
+      // expand animation
+      animation: expand-width-bar .1s linear;
+      width: 20px;
+      // opacity arrow
+      &::after {
+        animation: fadein-arrow .25s ease-in-out;
+        opacity: 1;
+        display: block;
+      }
+    }
+    &.hide {
+      // display: block !important;
+      // expand animation
+      width: 0px;
+      animation: collapse-width-bar .1s linear;
+      // opacity arrow
+      &::after {
+        animation: fadeout-arrow .25s ease-in-out;
+        opacity: 0;
+        display: none;
+      }
+    }
+  }
+  div.arrow_right_scroller {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20px;
+    height: 100%;
+    background-color: white;
+    z-index: 1;
+    transition: .25s;
+    &:hover {
+      cursor: pointer;
+    }
+    &:hover::after {
+      transition: .25s;
+      transform: scale(1.2);
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: calc(50% - 7.5px);
+      right: 0;
+      background-image: url(https://cproc.co/wp-content/themes/CPROC_Template/resources/img/arrow_right_black.webp);
+      background-size: 15.27px; // 22px w / 36px h = 0.61 * 25px h = 15.27px -> new width
+      background-repeat: no-repeat;
+      background-position: center center;
+      width: 15.27px;
+      height: 25px;
+    }
+    // animation execution by javascript (see scroller.js)
+    &.show {
+      // display: block !important;
+      // expand animation
+      animation: expand-width-bar .1s linear;
+      // opacity arrow
+      &::after {
+        animation: fadein-arrow .25s ease-in-out;
+        opacity: 1;
+        display: block;
+      }
+    }
+    &.hide {
+      // display: block !important;
+      // expand animation
+      animation: collapse-width-bar .1s linear;
+      width: 0;
+      // opacity arrow
+      &::after {
+        animation: fadeout-arrow .1s ease-in-out;
+        opacity: 0;
+        display: none;
+      }
+    }
+  }
+  div.content_overflow_left {
+    @include display-flex(column, center);
+    // display: none !important;
+    position: absolute;
+    left: 20px;
+    top: 0;
+    height: 100%;
+    // width: 25px;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    z-index: 1;
+    transition: .25s;
+    img {
+      align-self: center;
+      width: 15px;
+      height: auto;
+    }
+    // animation execution by javascript (see scroller.js)
+    &.show {
+      // display: block !important;
+      // expand animation
+      animation: expand-width-bar .1s linear;
+      width: 25px;
+    }
+    &.hide {
+      // display: block !important;
+      // expand animation
+      // display: none;
+      width: 0px;
+      animation: collapse-width-bar .1s linear;
+    }
+  }
+  div.content_overflow_right {
+    @include display-flex(column, center);
+    // display: none !important;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    height: 100%;
+    // width: 25px;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+    z-index: 1;
+    transition: .25s;
+    // animation execution by javascript (see scroller.js)
+    &.show {
+      // display: block !important;
+      // expand animation
+      animation: expand-width-bar .1s linear;
+      width: 25px;
+    }
+    &.hide {
+      // display: block !important;
+      // expand animation
+      // display: none;
+      width: 0px;
+      animation: collapse-width-bar .1s linear;
+    }
+  }
+  div.content_scroller {
+    @include display-flex(row, normal);
+    // display: none;
+    padding-top: 15px;
+    margin-bottom: 0px;
+    // margin-left: 25px;
+    // margin-right: 25px;
+    max-width: 100%;
+    @media screen and (max-width: 1024px) {
+      margin-left: 0px;
+    }
+    &.no-arrow-left {
+      margin-left: 0;
+    }
+    &.no-arrow-right {
+      margin-right: 0;
+    }
+    // border-top: 1px solid $light-gray;
+    // ------------------- hide scrollbars -------------------------
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar { /* Chrome */
+        display: none;
+    }
+    /* -------------------- Scrolling "logic" --------------------- */
+    overflow-x: scroll;
+    //Better scrolling animation rendering on WebKit based browsers
+    -webkit-overflow-scrolling: touch;
+    //Make each slide snap into place with x snap-points.
+    scroll-snap-type: x mandatory;
+    & > a {
+      //align position x snap-point to center of each div.person
+      scroll-snap-align: left;
+    }
+    /* --------------------------------------------------------- */
+    a.article_card {
+      display: block;
+      border-radius: 15px;
+      padding: 15px;
+      width: 170px;
+      min-width: 170px;
+      height: 225px;
+      position: relative;
+      overflow: hidden;
+      &:not(:first-of-type) {
+        margin-left: 15px;
+      }
+      span {
+        color: white;
+        font-weight: 500;
+        font-size: 18px;
+      }
+      img {
+        position: absolute;
+      }
+    }
+  }
+}
