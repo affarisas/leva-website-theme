@@ -59,8 +59,7 @@
   align-items: center;
   gap: 8px;
 }
-.part-general-credit-simulator .simulator-card .form-row .form-group.checkbox-group input[type=radio],
-.part-general-credit-simulator .simulator-card .form-row .form-group.checkbox-group input[type=checkbox] {
+.part-general-credit-simulator .simulator-card .form-row .form-group.checkbox-group input[type=radio] {
   width: auto;
   margin: 0;
   accent-color: var(--main-color);

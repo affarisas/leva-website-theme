@@ -1,17 +1,21 @@
 .part-tasas-detail-section .lock__ui {
   padding: 40px 0;
-  flex-direction: column; }
-  .part-tasas-detail-section .lock__ui .header-container {
-    text-align: center;
-    margin-bottom: 60px;
-    padding: 0 20px; }
-    .part-tasas-detail-section .lock__ui .header-container h2 {
-      font-size: 40px;
-      font-weight: 700;
-      color: var(--neutral-black);
-      margin-bottom: 15px; }
-    .part-tasas-detail-section .lock__ui .header-container .description {
-      font-size: 16px;
-      color: #7D888A;
-      max-width: 600px;
-      margin: 0 auto; }
+  flex-direction: column;
+}
+.part-tasas-detail-section .lock__ui .header-container {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 0 20px;
+}
+.part-tasas-detail-section .lock__ui .header-container h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--neutral-black);
+  margin-bottom: 15px;
+}
+.part-tasas-detail-section .lock__ui .header-container .description {
+  font-size: 16px;
+  color: #7D888A;
+  max-width: 600px;
+  margin: 0 auto;
+}

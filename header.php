@@ -59,6 +59,8 @@ https://sketchfab.com/3d-models/vintage-electric-glass-light-bulb-15f34dfc8d0241
     <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet"/>
     <script src="<?php bloginfo('template_url'); ?>/js/index.js"></script>
 
+    <link rel="icon" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/leva-a-logo.svg" type="image/svg+xml">
+
     <!-- Script de librerías -->
     <?php
       if(is_page('blogs')) { ?>
