@@ -1,5 +1,5 @@
 {
-  "name": "movier-template",
+  "name": "leva-template",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Leandro201927/movier-wordpress.git"
+    "url": "git+https://github.com/Leandro201927/leva-wordpress.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Leandro201927/movier-wordpress/issues"
+    "url": "https://github.com/Leandro201927/leva-wordpress/issues"
   },
-  "homepage": "https://github.com/Leandro201927/movier-wordpress#readme",
+  "homepage": "https://github.com/Leandro201927/leva-wordpress#readme",
   "dependencies": {
     "chokidar": "^3.5.3",
     "fs-extra": "^11.1.1",

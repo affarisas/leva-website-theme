@@ -35,6 +35,7 @@ https://sketchfab.com/3d-models/vintage-electric-glass-light-bulb-15f34dfc8d0241
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/leva-a-logo.svg" type="image/svg+xml">
     <?php wp_head(); ?>
 
     <!-- Google Tag Manager -->
